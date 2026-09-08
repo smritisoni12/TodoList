@@ -1,0 +1,304 @@
+
+
+/* css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 50px 20px;
+}
+
+
+/* =========================
+   FORM CONTAINER
+========================= */
+
+.container {
+  width: 650px;
+  max-width: 100%;
+
+  background: white;
+  padding: 30px;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   TAB HEADINGS
+========================= */
+
+.heading-container {
+  display: flex;
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+
+/* Individual tab */
+
+.headings {
+  flex: 1;
+
+  padding: 12px 18px;
+
+  text-align: center;
+
+  border: 1px solid #d9dee8;
+  border-radius: 8px;
+
+  background: #f8f9fc;
+
+  color: #555;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+/* Hover */
+
+.headings:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
+  color: #4f46e5;
+}
+
+
+/* =========================
+   ACTIVE COMPONENT
+========================= */
+
+.active-component {
+  min-height: 250px;
+
+  padding: 25px;
+
+  border: 1px solid #e1e5ec;
+  border-radius: 10px;
+
+  background: #fafbfc;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   PROFILE FORM
+========================= */
+
+.active-component label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #374151;
+}
+
+
+.active-component input[type="text"],
+.active-component input[type="number"] {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  background: white;
+
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Input focus */
+
+.active-component input[type="text"]:focus,
+.active-component input[type="number"]:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.errors {
+  display: block;
+
+  margin-top: -10px;
+  margin-bottom: 12px;
+
+  color: #dc2626;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   CHECKBOX / RADIO
+========================= */
+
+.active-component input[type="checkbox"],
+.active-component input[type="radio"] {
+  width: 16px;
+  height: 16px;
+
+  accent-color: #6366f1;
+
+  cursor: pointer;
+}
+
+
+/* Labels containing checkbox/radio */
+
+.active-component input[type="checkbox"] + *,
+.active-component input[type="radio"] + * {
+  cursor: pointer;
+}
+
+
+/* =========================
+   INTEREST / SETTINGS ITEMS
+========================= */
+
+.active-component > div > div {
+  margin-bottom: 15px;
+}
+
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.container > div:last-child {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  padding: 10px 22px;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+/* Previous */
+
+button:first-child {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+
+button:first-child:hover {
+  background: #d1d5db;
+}
+
+
+/* Next / Submit */
+
+button:not(:first-child) {
+  background: #6b65ea;
+  color: white;
+}
+
+
+button:not(:first-child):hover {
+  background: #786ded;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  #root {
+    padding: 20px 12px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .heading-container {
+    gap: 5px;
+  }
+
+  .headings {
+    padding: 10px 5px;
+
+    font-size: 13px;
+  }
+
+  .active-component {
+    padding: 18px;
+  }
+
+  button {
+    padding: 9px 16px;
+  }
+}
