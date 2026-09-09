@@ -11,8 +11,8 @@ function TabForm(){
      name: "smriti",
      age: "23",
      email: "smriti@123",
-     interest : ["movies", "chess"],
-     settings: "dark",
+     interest : ["chess", "music"],
+     theme: "dark",
   })
 
   const [errors, setErrors] = useState({})
@@ -40,12 +40,14 @@ function TabForm(){
                         component: Interest,
                         validate: () => {
                           const err = {};
-                          if(data.interest.length < 1){
-                            err.interest = "Select atleast one !"
+                          if(data.interest.length === 0){
+                            err.interest = "Please select at least one interest !"
                           }
                           setErrors(err)
-                          return err.interest ? false : true 
+                          // return err.interest ? false : true 
+                          return Object.keys(err).length === 0;
                         }
+                        
                        },
                         { name: "settings",
                         component: Settings,

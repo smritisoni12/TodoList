@@ -2,11 +2,27 @@
 function Settings({data, setData}){
    const {theme} = data;
 
-   const handleDataChange = (e) => {  // e is the event object.    React gives it to us automatically when the event happens.
-      setData((...prevState) =>  ({
-         ...prevState,  // Keep everything that was already in the state.
+   const handleDataChange = (e) => { 
+
+       setData((prevState) =>  ({
+         ...prevState,              // Keep everything that was already in the state.
           theme: e.target.name}))
-   }  // Why ({?  =>  I am implicitly returning something. The thing I'm returning is an object.
+
+    // e is the event object.    React gives it to us automatically when the event happens.
+      /* setData((...prevState) =>  ({  you're effectively making prevState an array containing the previous state:
+   prevState = [
+   {
+      name: "smriti",
+      age: "23",
+      email: "smriti@123",
+      interest: ["movies", "chess"],
+      settings: "dark"
+   }
+]  spreads the array, not the state object.So your state gets messed up.  const { interest } = data; => interest === undefined*/ 
+   }  
+   
+   // Why ({?  =>  I am implicitly returning something. The thing I'm returning is an object.
+   
    return(
     <div> 
                         <div> 
